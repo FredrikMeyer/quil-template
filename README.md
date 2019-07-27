@@ -10,4 +10,5 @@ Install via `lein install` after a `git pull`.
 
 ## Todo
 
- - [ ] 
+ - [ ] Add correct licence.
+ - [ ] Implement better auto-updating. 
