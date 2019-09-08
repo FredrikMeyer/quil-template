@@ -12,4 +12,5 @@
     (main/info "Generating fresh 'lein new' quil-template project.")
     (->files data
              ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
+             [".gitignore" (render "gitignore" data)]
              ["project.clj" (render "project.clj" data)])))
