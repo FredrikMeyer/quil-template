@@ -7,20 +7,26 @@
  
 (defn setup []
   (q/color-mode :hsb 100 100 100 100)
-  {}) 
+  {})
+
+
+(defn draw []
+  ;; Your drawing here
+  )
 
 (defn update-state [state]
   state)
 
 (defn draw-state [state]
   (q/background 0)
+  (time (draw))
   (println "Done")
   (q/no-loop))
 
 (defn save-on-click [state event]
   (println "Saved")
   (println state)
-  (q/save-frame (str "{{name}}" (hash state) "_" (q/random 0 1) " .tif"))
+  (q/save-frame (str "{{name}}" (hash state) "_" (q/random 0 1) ".tif"))
   state)
 
 (q/defsketch {{name}}
