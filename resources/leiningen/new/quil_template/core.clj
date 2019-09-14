@@ -7,6 +7,7 @@
  
 (defn setup []
   (q/color-mode :hsb 100 100 100 100)
+  (q/stroke 100 100)
   {})
 
 
@@ -29,12 +30,18 @@
   (q/save-frame (str "{{name}}" (hash state) "_" (q/random 0 1) ".tif"))
   state)
 
+(defn redraw [old-state event]
+  (if (= (:key event) :r)
+    (q/redraw))
+  old-state)
+
 (q/defsketch {{name}}
   :title "You spin my circle right round"
   :size [w h]
   :setup setup
   :update update-state
   :mouse-clicked save-on-click
+  :key-pressed redraw
   :draw draw-state
   :features [:keep-on-top :no-bind-output :pause-on-error]
   :middleware [m/fun-mode m/pause-on-error])
