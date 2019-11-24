@@ -5,12 +5,12 @@
 (def render (renderer "quil-template"))
 
 (defn quil-template
-  "A flowery Quil template."
+  "A Quil template."
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
     (main/info "Generating fresh 'lein new' quil-template project.")
     (->files data
-             ["src/{{sanitized}}/core.clj" (render "core.clj" data)]
+             ["src/clj/{{sanitized}}/core.clj" (render "core.clj" data)]
              [".gitignore" (render "gitignore" data)]
              ["project.clj" (render "project.clj" data)])))
