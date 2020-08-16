@@ -4,7 +4,7 @@
 
 (def w 600)
 (def h 600)
- 
+
 (defn setup []
   (q/color-mode :hsb 100 100 100 100)
   (q/stroke 100 100)
