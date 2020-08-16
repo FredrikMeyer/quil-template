@@ -13,4 +13,5 @@
     (->files data
              ["src/clj/{{sanitized}}/core.clj" (render "core.clj" data)]
              [".gitignore" (render "gitignore" data)]
+             [".java-version" (render "java-version" data)]
              ["project.clj" (render "project.clj" data)])))

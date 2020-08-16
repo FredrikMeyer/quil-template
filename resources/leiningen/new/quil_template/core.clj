@@ -31,7 +31,7 @@
   state)
 
 (defn redraw [old-state event]
-  (if (= (:key event) :r)
+  (when (= (:key event) :r)
     (q/redraw))
   old-state)
 
